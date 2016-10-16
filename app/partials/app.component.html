@@ -1,0 +1,7 @@
+<header> 
+    <h1> {{ title }}</h1>
+</header>
+<!--Afficher chaque tâche ! -->
+    <section *ngFor="let todo of list">     
+        <li> {{ todo.name }} </li>
+    </section>
