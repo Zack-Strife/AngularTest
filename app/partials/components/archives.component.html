@@ -1,8 +1,7 @@
 <header> 
     <h1> {{ title }}</h1>
 </header>
-<!--Afficher chaque tâche ! -->
-    <section *ngFor="let todo of list">     
-        <li> {{ todo.name }} </li>
-        <button (click)="DeleteTodo(todo)"> {{ delete_btn }}</button>
+<!--Afficher chaque tâche archivée ! -->
+    <section *ngFor="let archive of archivelist">     
+        <li> {{ archive.name }} </li>
     </section>

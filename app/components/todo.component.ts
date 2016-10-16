@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Config } from '../config'
 // On importe le model de données
 import { TodoList } from '../dataModel/Todo.data.model'
+// Importation de la class archive pour récupérer Archivlist
+import { ARCHIVELIST } from './archives.component'
 @Component({
     selector: 'todo',
     templateUrl: 'app/partials/components/todo.component.html'
@@ -12,12 +14,16 @@ export class TodoComponent implements OnInit{
     add_btn = Config.ADD_BTN;
     sub_title = Config.APP_SUBTITLE;
     // La variable todos prend la valeur de notre tableau qui contient les taches à faire
-      private list: any;
+    private list: any;
     newTodo: any;
+    // On récupère la constante 
+    archivelist = ARCHIVELIST;
 
     DeleteTodo(index:any) {
         // Retire un élément du tableau
         this.list.splice(this.list.indexOf(index), 1);
+        // On ajoute la tache supprimée dans le tableau des tâches archivées
+        this.archivelist.push(index);
     }
     // Créer une fonction qui va reset l'input 
     resetInput() {
