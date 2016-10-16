@@ -4,4 +4,5 @@
 <!--Afficher chaque tâche ! -->
     <section *ngFor="let todo of list">     
         <li> {{ todo.name }} </li>
+        <button (click)="DeleteTodo(todo)"> {{ delete_btn }}</button>
     </section>

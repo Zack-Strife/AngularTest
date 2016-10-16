@@ -13,10 +13,15 @@ export class TodoList {
 })
 export class AppComponent {
     title = Config.APP_TITLE;
+    delete_btn = Config.DELETE_BTN;
     //Créer la variable qui va contenir le tableau de la todo list, puis l'initialiser avec le ngOnInit au lancement de l'application
     private list: any;
 
     ngOnInit() {
         this.list = Config.TODOLIST;
+    }
+    DeleteTodo(index:any) {
+        // Retire un élément du tableau
+        this.list.splice(this.list.indexOf(index), 1);
     }
 }
