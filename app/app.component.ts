@@ -23,7 +23,7 @@ export class AppComponent {
     }
     // Créer une fonction qui va reset l'input 
     resetInput() {
-        this.newTodo = {name: " "}
+        this.newTodo = {name: ""}
     }
     // Créer la fonction qui va ajouter l'item au tableau 
     addNewTodo() {
