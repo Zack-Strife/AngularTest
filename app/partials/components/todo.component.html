@@ -1,0 +1,14 @@
+ <header> 
+    <h1> {{ title }}</h1>
+</header>
+<!--Afficher chaque tâche ! -->
+    <section *ngFor="let todo of list">     
+        <li> {{ todo.name }} </li>
+        <button (click)="DeleteTodo(todo)"> {{ delete_btn }}</button>
+    </section>
+ <section>
+        <!--Créer la section qui permet de récupérer la variable todo,de l'envoyer puis de lancer la fonction addNewTodo-->
+        <h2> {{ sub_title }}</h2>
+        <input type="text" [(ngModel)]="newTodo.name" placeholder="Ajoute ici ta tâche !">
+        <button (click)="addNewTodo()"> {{ add_btn }} </button>
+    </section>
